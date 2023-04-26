@@ -657,7 +657,7 @@ sub main()
     Param("RopeHookUseTargetedJump", "true"); // Using targeted jump "Rope_Jump" instead of not targeted one "Rope_Jump_No_Target"
     Param("RopeHookStopControllerOnJump", "false"); // Can be used to make a fake jump, that only the ForcedPhysics will be applied instead of jump
     Param("RopeHookAutoReleaseWhenMovingBackwards", "false"); // AutoDrop player if he starts swinging backward
-    Param("RopeHookAllowThrowOnNothing", "false"); // when no ropehook target, allow for throwing anyway.
+    Param("RopeHookAllowThrowOnNothing", "true"); // when no ropehook target, allow for throwing anyway.
     Param("RopeHookUpdateHookPointToAttachedObjectPos", "false"); // If the object we are attached moves, our attach point will be updated accordingly.
     Param("RopeHookChangeRopeLengthWhenHookPointMoves", "true"); // On point movement, stretch the line instead of draging the player
     Param("RopeHookBlockedWhenNitroSprinting", "false"); // When NitroSprinting, don't allow to throw hook or attach.
