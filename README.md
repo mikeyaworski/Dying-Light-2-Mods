@@ -11,3 +11,11 @@
 1. Remove everything except for the files you intend to modify. For now, that is everything except for the `dataX/scripts/player/player_variables...` files.
 1. Modify the files by changing whichever variables.
 1. Zip the folder and rename it from `dataX.zip` to `dataX.pak`. Make sure the zip does not contain the `dataX` folder as a wrapper. The structure inside the `dataX.pak` archive should be `scripts/player/...`, NOT `dataX/scripts/player/...`.
+
+## Push a new release
+
+Releases are created when new tags are pushed. Below is an example of creating and pushing a tag:
+```
+git tag -a v1.0 -m "Version 1.0 of mod for game version 1.10.2"
+git push --follow-tags
+```

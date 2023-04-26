@@ -1,0 +1,21 @@
+name: Build Utility Mod
+on:
+  push:
+    tags:
+      - 'v*'
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      is_tag: ${{ startsWith(github.ref, 'refs/tags/v') }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: montudor/action-zip@v1
+      - run: cd ./"Utility Mod"/data2 && zip -r data2.pak .
+      - uses: ncipollo/release-action@v1
+        if: env.is_tag == 'true'
+        with:
+          artifacts: "./Utility\ Mod/data2/data2.pak"
+          generateReleaseNotes: true
