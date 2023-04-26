@@ -12,7 +12,7 @@ sub PlayerVariables()
 
     Param("PerfectBlockTimingEnd", "0.15");
 
-    Param("MeleeWpnDurabilityMulReduce", "1.25");
+    Param("MeleeWpnDurabilityMulReduce", "0");
 
     Param("HealthRegenerationMaxLevel", "HealthRegenerationMaxLevel_Hard");
     Param("HealthRegenerationMul", "DefaultRegenHardMul");

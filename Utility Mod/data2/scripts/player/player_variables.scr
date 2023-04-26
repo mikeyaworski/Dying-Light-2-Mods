@@ -744,7 +744,7 @@ sub main()
     Param("ChargeAutoReleaseTime", "-1.0"); // to restore auto release for power attack, set 1.2 here
     Param("ChargeHoldDuration", "0.35");
     Param("ChargeWeaponDurabilityMul", "1.0");
-	Param("MeleeWpnDurabilityMulReduce", "1.0");
+	Param("MeleeWpnDurabilityMulReduce", "0");
 	Param("ChargeSpinCrouchOffset", "-0.2");
 	Param("ChargeSpinAdditionalRange", "1.0");
 		
