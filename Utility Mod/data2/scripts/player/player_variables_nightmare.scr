@@ -12,7 +12,7 @@ sub PlayerVariables()
 
     Param("PerfectBlockTimingEnd", "0.15");
 
-    Param("MeleeWpnDurabilityMulReduce", "0.0");
+    Param("MeleeWpnDurabilityMulReduce", "1.25");
 
     Param("HealthRegenerationMaxLevel", "HealthRegenerationMaxLevel_Hard");
     Param("HealthRegenerationMul", "DefaultRegenHardMul");
@@ -28,4 +28,5 @@ sub PlayerVariables()
 	Param("DifficultySyncActionDamageMul", "1.5");
     Param("DifficultyItemDamageMul", "1.5");	
 	Param("DifficultyRangedHeadDamageMul", "1.5");
+	Param("MaxDodgesInSequence", "2");
 }

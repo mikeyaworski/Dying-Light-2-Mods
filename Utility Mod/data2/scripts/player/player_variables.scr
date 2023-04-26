@@ -258,10 +258,11 @@ sub main()
     
 	Param("WrestlingKick", "0");
     Param("WrestlingKickDoubleInputRequired", "true");
-	Param("WrestlingKickExtraGravity", "8");
-	Param("WrestlingKickExtraGravityDuration", "0.35");
-	Param("WrestlingKickHittedExtraGravity", "10");
-	Param("WrestlingKickHittedExtraGravityDuration", "0.3");	
+	Param("WrestlingKickExtraGravity", "8"); 
+	Param("WrestlingKickExtraGravityDuration", "0.35"); //0.5
+	Param("WrestlingKickHittedExtraGravity", "10"); //0.8
+	Param("WrestlingKickHittedExtraGravityDuration", "0.3"); //0.5
+    Param("WrestlingKickDefaultExtraGravity", "0.0"); //-50
 	Param("WrestlingKickByJumping", "0");
 	
 	Param("StalkerEnemyDamagePerSecond", "25.0"); // when in range damage done per second
@@ -356,6 +357,7 @@ sub main()
     Param("StaminaRegenerationRelative", "2.0");
     Param("StaminaRegenerationRelativeOutsideDanger", "2.0");
     Param("StaminaRegenerationRelativeEnabled", "true");
+    Param("StaminaRegenerationRelativeForAllWeapons", "true");
     Param("StaminaRegenerationFactorSlow", "0.33");               // factor when running or being on ladder
 	Param("StaminaRegenerationFactorStand", "0.25");               // factor when standing still
 	Param("StaminaRegenerationFactorStandDalay", "1.0");               // factor when standing still
@@ -406,7 +408,7 @@ sub main()
     Param("SlowMoProbability", "1.0");
 	Param("SlowMoLastGroupTime", "30.0");
 	Param("GroupOfEnemiesCount", "3.0");	
-    Param("SkipObstacleMechanimsOnEnemyProb", "0.0");
+    Param("SkipObstacleMechanimsOnEnemyProb", "0.4");
     Param("CanThrowInLookback", "0");
     Param("ChallengeStaminaDropMul", "0.2");
     Param("ZipLineMinSpeed", "6.0");
@@ -587,7 +589,7 @@ sub main()
     Param("MoveBackwardMaxSpeed", "2.5");             // DL: 2.5, PREPROD: 2.0
 	Param("StorageEquipmentSlotsCount", "25");
     Param("StorageConsumamblesSlotsCount", "25");
-    Param("StorageOtherSlotsCount", "50");
+    Param("StorageOtherSlotsCount", "250");
 	
 	Param("AttackMoveForwardMaxSpeed", "2.0");
 	Param("AttackMoveBackwardMaxSpeed", "1.0");
@@ -655,7 +657,7 @@ sub main()
     Param("RopeHookUseTargetedJump", "true"); // Using targeted jump "Rope_Jump" instead of not targeted one "Rope_Jump_No_Target"
     Param("RopeHookStopControllerOnJump", "false"); // Can be used to make a fake jump, that only the ForcedPhysics will be applied instead of jump
     Param("RopeHookAutoReleaseWhenMovingBackwards", "false"); // AutoDrop player if he starts swinging backward
-    Param("RopeHookAllowThrowOnNothing", "true"); // when no ropehook target, allow for throwing anyway.
+    Param("RopeHookAllowThrowOnNothing", "false"); // when no ropehook target, allow for throwing anyway.
     Param("RopeHookUpdateHookPointToAttachedObjectPos", "false"); // If the object we are attached moves, our attach point will be updated accordingly.
     Param("RopeHookChangeRopeLengthWhenHookPointMoves", "true"); // On point movement, stretch the line instead of draging the player
     Param("RopeHookBlockedWhenNitroSprinting", "false"); // When NitroSprinting, don't allow to throw hook or attach.
@@ -742,7 +744,7 @@ sub main()
     Param("ChargeAutoReleaseTime", "-1.0"); // to restore auto release for power attack, set 1.2 here
     Param("ChargeHoldDuration", "0.35");
     Param("ChargeWeaponDurabilityMul", "1.0");
-	Param("MeleeWpnDurabilityMulReduce", "0.0");
+	Param("MeleeWpnDurabilityMulReduce", "1.0");
 	Param("ChargeSpinCrouchOffset", "-0.2");
 	Param("ChargeSpinAdditionalRange", "1.0");
 		
@@ -998,7 +1000,7 @@ sub main()
     Param("SlideStaminaUsage", "0.25");
 	Param("AutomaticSlideFallHeight", "999.9"); /// gloVA: turned of so not slippery geometry won't force the player to slide (it was annoying)	
 	Param("SlideSideInputAccel","40.0");
-	Param("MinSlideVelocity","2.5");
+	Param("MinSlideVelocity","5.0");
 	Param("SlideMinSpeedTimeToBreak","0.5");
 	Param("AutomaticSlideBlockInputsTime","0.5");
 	
@@ -1067,7 +1069,7 @@ sub main()
 	
 	///// Dodge
 	Param("DodgeCrouchTimeWindow", "0.7");
-	Param("DodgeMinLookAngle", "60.0");
+	Param("DodgeMinLookAngle", "75.0");
     Param("DodgeJumpBack", "1");
     Param("DodgeJumpSide", "1");
     Param("ExhaustedDodgeEnabled", "1"); 
@@ -1342,7 +1344,7 @@ sub main()
 	Param("KickDisabled", "0");
     Param("KnockdownAfterKnockdownMinTime", "1.25");
 	
-	Param("CanBlockWithFistsOtherWeapons", "1");
+	Param("CanBlockWithFistsOtherWeapons", "0"); //1 edited on patch10
     Param("BlockPushHeavyChance", "0.0");
     Param("BlockPushStaminaRecoverChance", "0.0");
     Param("PerfectBlockTimingStart", "0.0");
@@ -1519,7 +1521,7 @@ sub main()
 	Param("PerfectBlockActionWith2HandedWpn", "true");	
 	Param("PerfectBlockWithSlowMo", "false");
 	Param("PerfectBlockStaminaMul", "1.0");	
-	Param("PerfectBlockStaggerDuration", "1.0");	
+	Param("PerfectBlockStaggerDuration", "1.6");	//1 edited on patch10
 	Param("BlockAutomaticlyWith2HandedWpn", "false");	
     Param("GlideDownRequireSurfaceFlag", "false");
     Param("CustomSkin", "");
@@ -1549,7 +1551,7 @@ sub main()
 	Param("MaxVelSlopeSliding" , "7" );
 	Param("MaxVelSlopeForcedSliding" , "9");
 	Param("MaxVelMovingDownSlope" , "5");	
-	Param("HumanTakeDownInitialStaminaCost" , "0.2");
+	Param("HumanTakeDownInitialStaminaCost" , "0.2"); 
 	Param("HumanTakeDownLoopTime" , "3.0");
     Param("FinisherStaggeredEnemyHealthFacor" , "0.35");
 	Param("MinGlideHeightToAwardExperience", "6.0");
@@ -1570,11 +1572,20 @@ sub main()
 	
 	Param("StaminaDamageWhenHitted", "0.1");		
 	
+    Param("HitFanFramesPrediction" , "1");
+    Param("HitFanAdditionalLayers", "2");
+    Param("HitFanEnableDirAndPointsSegmentCorrection", "false");
+    Param("HitFanEnableDirPlaneCorrection", "true");
+    Param("HitFanPlaneCorrectionHelperDirectionFactor", "0.7");
+    Param("HitFanUseAttackHelper", "true");
+    Param("HitFanUsePreciseHitImpactDirection", "true");
+    
 	Param("HitTimeToSlowAnim" , "0.0");
-	Param("HitFramesToProject" , "3");
-	Param("HitFramesInAdvanceToTest" , "5");
 	Param("HitTimeWindowToPlayDifAnim" , "1.0");
 	Param("HitAnimVariationNumber", "3");
+
+    Param("HitDeadEnemyGibSoundEnabled", "true");
+
 	Param("MonkeyBarJumpAttackSearchRadius", "8");
 	Param("JumpAttackHorzMaxDeviation", "70");
 	Param("NagewazaEnable", "false");
@@ -1638,7 +1649,7 @@ sub main()
 	
 	Param("BodyContainerMeshName", "drugs.msh");
 	
-	Param("DoubleDodgeAvailable", "true");
+	Param("MaxDodgesInSequence", "4");
 	Param("EnableThrowingWhileParkouring", "true");
     Param("EnableSlowMoThrowingWhileParkouring", "false");
 	Param("ThrowSlowMoLookMul", "3.0");
@@ -1876,7 +1887,7 @@ sub main()
 
     Param("InjectorDescSuffix", "");
 
-    Param("InfiniteArrows", "true");
+    Param("InfiniteArrows", "false");
 
     Param("CrouchRollEnabled", "false");
 	
@@ -1922,7 +1933,7 @@ sub main()
 
     Param("BoomerangRange", "30.0");
 
-    Param("OnEnemyJumpHoldTime", "0.1");
+    Param("OnEnemyJumpHoldTime", "0.0");
 
     Param("PlayerShieldBlockStaminaCostMul", "0.5");
 
@@ -1963,4 +1974,20 @@ sub main()
     Param("WaterMovementSpeedMulLevel1", "0.85");
     Param("WaterMovementSpeedMulLevel2", "0.75");
     Param("WaterMovementSpeedMulLevel3", "0.7");
+
+    Param("XRaySlomoDuration", "0.75");
+    Param("XRaySlomoFadeIn", "0.10");
+    Param("XRaySlomoFadeOut", "0.05");
+    Param("XRaySlomoWorldSpeed", "0.075");
+    Param("XRaySlomoActivePlayerSpeed", "0.3");
+    Param("XRaySlomoInactivePlayerSpeed", "0.02");
+
+	Param("InAirAttackSlomoActivePlayerSpeed", "0.2");
+    Param("InAirAttackSlomoInactivePlayerSpeed", "0.2");
+	
+	Param("AirTakedownEnabled", "false");
+
+    Param("BlockHealthRegenerationDuringGrab", "false");
+
+    Param("QTEHoldFakeTapGlobalMultiplier", "6.0");
 }

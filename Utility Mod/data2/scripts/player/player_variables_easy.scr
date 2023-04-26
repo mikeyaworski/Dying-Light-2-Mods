@@ -10,9 +10,11 @@ sub PlayerVariables()
 	
 	Param("WeaponStaminaUsageMul", "0.75");
     Param("StaminaRegenerationMul", "1.25");
-    Param("MeleeWpnDurabilityMulReduce", "0.0");
+    Param("MeleeWpnDurabilityMulReduce", "0.75");
 
     Param("HealthRegenerationMul", "DefaultRegenEasyMul");
 	Param("SpecialMoveAbusePenaltyCount", "3.0"); // max time the AI will avoid the move	
 	Param("SpecialMoveDropKickAbusePenaltyCount", "2.0"); // max time the AI will avoid the move
+	
+	Param("MaxDodgesInSequence", "4");
 }

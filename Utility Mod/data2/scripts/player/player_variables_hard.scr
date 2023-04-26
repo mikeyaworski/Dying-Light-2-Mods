@@ -29,4 +29,5 @@ sub PlayerVariables()
 	Param("DifficultyRangedHeadDamageMul", "1.5");
 	Param("SpecialMoveAbusePenaltyCount", "1.0"); // max time the AI will avoid the move
 	Param("DropAttackMaxFallHeight", "15.0"); // block using jump attack after faling from 15 meters
+	Param("MaxDodgesInSequence", "2");
 }
