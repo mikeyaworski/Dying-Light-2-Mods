@@ -1887,7 +1887,7 @@ sub main()
 
     Param("InjectorDescSuffix", "");
 
-    Param("InfiniteArrows", "false");
+    Param("InfiniteArrows", "true");
 
     Param("CrouchRollEnabled", "false");
 	
