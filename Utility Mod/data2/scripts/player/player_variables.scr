@@ -562,18 +562,18 @@ sub main()
     Param("AfterDeathHealthFactor", "Player_AfterDeathHealth");   // Part of MaxHealth restored after respawn
     Param("BulletAccuracyFactor", "1.0");
 	Param("UnlockedLoadoutsCount", "1.0");
-    Param("EquipmentSlotsCount", "16");          //total inventory slots for equipment
+    Param("EquipmentSlotsCount", "99");          //total inventory slots for equipment
     Param("VisibleEquipmentSlotsCount", "4");   //how many "quick slots" player has in hud wheels (must be < EquipmentSlotsCount)
-    Param("ConsumableSlotsCount", "16");         //total inventory slots for consumables
+    Param("ConsumableSlotsCount", "99");         //total inventory slots for consumables
     Param("VisibleConsumableSlotsCount", "4");  //how many "quick slots" player has in hud wheels (must be < ConsumableSlotsCount)
     Param("RestrictedEquipmentSlotsCount", "0"); // UV Flashlight, Binoculars, RopeHook. Value is increased from skills that grants thoes equipments
-	Param("QuickSlotsCount", "24");              //total inventory slots for weapons
+	Param("QuickSlotsCount", "99");              //total inventory slots for weapons
     Param("VisibleQuickSlotsCount", "4");       //how many "quick slots" player have on hud wheels (must be < QuickSlotsCount)
     Param("InventorySize", "0");
     Param("ItemsInventorySize", "441");
-    Param("MaxInventorySize", "8");
-    Param("AmmoSlotsCount", "12"); // limited max is 100
-    Param("StorageAmmoSlotsCount", "100");
+    Param("MaxInventorySize", "99");
+    Param("AmmoSlotsCount", "100"); // limited max is 100
+    Param("StorageAmmoSlotsCount", "999");
     Param("SwimMoveSpeed", "2.5");
     Param("SwimSprintSpeed", "4.0");
     Param("SwimImpulsSpeed", "2.0");
@@ -592,9 +592,9 @@ sub main()
     Param("MoveForwardMaxSpeed", "3.5");                // DL: 3.5, PREPROD: 3.0
     Param("MoveBackwardMinSpeed", "0.5");
     Param("MoveBackwardMaxSpeed", "2.5");             // DL: 2.5, PREPROD: 2.0
-	Param("StorageEquipmentSlotsCount", "100");
-    Param("StorageConsumamblesSlotsCount", "100");
-    Param("StorageOtherSlotsCount", "250");
+	Param("StorageEquipmentSlotsCount", "999");
+    Param("StorageConsumamblesSlotsCount", "999");
+    Param("StorageOtherSlotsCount", "999");
 	
 	Param("AttackMoveForwardMaxSpeed", "2.0");
 	Param("AttackMoveBackwardMaxSpeed", "1.0");
