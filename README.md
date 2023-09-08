@@ -14,7 +14,7 @@
 
 ## Push a new release
 
-Releases are created when new tags are pushed. Below is an example of creating and pushing a tag:
+Releases are created when new tags are pushed (if the tag name starts with "v"). Below is an example of creating and pushing a tag:
 ```
 git tag -a v1.0 -m "Version 1.0 of mod for game version 1.10.2"
 git push --follow-tags
