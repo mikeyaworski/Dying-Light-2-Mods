@@ -1,6 +1,5 @@
 sub main()
 {
-	
 	Param("ManualSloMoEnabled", "false");
 	Param("ManualSloMoCooldown", "5.0");  
 	
@@ -349,9 +348,9 @@ sub main()
     Param("MaxStaminaDrainEnabled", "true");
     Param("MinStaminaLevelFromHit", "0.0");
     Param("StaminaTimeToRegenerateOnEmpty", "1.5");
-    Param("StaminaTimeToRegenerateOnEmptyAfterParokur", "1.0");          // NOT WORKING IN COMBAT  -time needed to fully restore stamina when completely depleted
+    Param("StaminaTimeToRegenerateOnEmptyAfterParokur", "1.2");          // NOT WORKING IN COMBAT  -time needed to fully restore stamina when completely depleted
     Param("StaminaTimeToRegenerate", "0.6");                 // time after which stamina starts to regenerate if player still has some stamina left
-    Param("StaminaTimeToRegenerateAfterParkour", "0.6");     // time after which stamina starts to regenerate if player still has some stamina left
+    Param("StaminaTimeToRegenerateAfterParkour", "0.85");     // time after which stamina starts to regenerate if player still has some stamina left
     Param("StaminaRegeneration", "1.5");                    // WARNING CHANGED SO EVERY THING IS IN SECONDS rate at which stamina regenerates in seconds to full bar!!
 	Param("StaminaRegenerationOutsideDanger", "1.5");
     Param("StaminaRegenerationRelative", "2.0");
@@ -369,7 +368,7 @@ sub main()
 
 	Param("DashAndAfterboostPostprocessMax", "0.33");
 	Param("SprintNitroStopAngleMoveInput", "20.0");
-    Param("SprintNitroStaminaConsuption", "0.40");
+    Param("SprintNitroStaminaConsuption", "0.525");
     Param("SprintNitroStartStaminaConsuption", "0.80");
     Param("SprintNitroMinDuration", "0.6");
     Param("SprintNitroDuration", "2.5");
@@ -490,6 +489,7 @@ sub main()
 	Param("DrunkEffectAddRollAngle", "10.0");
     Param("HeadbuttDrunkEffectTime", "3.0");
     Param("HeadbuttDrunkEffectPPFXPower", "0.25");
+    Param("DamageDrunkEffectPPFXPower", "0.3");
 	
 	Param("LookVertSpeed_Pad", "90.0");
     Param("LookHorzSpeed_Pad", "180.0");     // DL: 260.0, PREPROD: 260.0
@@ -592,8 +592,8 @@ sub main()
     Param("MoveForwardMaxSpeed", "3.5");                // DL: 3.5, PREPROD: 3.0
     Param("MoveBackwardMinSpeed", "0.5");
     Param("MoveBackwardMaxSpeed", "2.5");             // DL: 2.5, PREPROD: 2.0
-	Param("StorageEquipmentSlotsCount", "25");
-    Param("StorageConsumamblesSlotsCount", "25");
+	Param("StorageEquipmentSlotsCount", "100");
+    Param("StorageConsumamblesSlotsCount", "100");
     Param("StorageOtherSlotsCount", "250");
 	
 	Param("AttackMoveForwardMaxSpeed", "2.0");
@@ -785,6 +785,9 @@ sub main()
     Param("AimStrafeMinSpeed", "0.5");
     Param("AimAcceleration", "7.0");
     Param("AimDeceleration", "10.0");
+
+    // Knife
+    Param("ChargeStaminaKnifeCostMul", "2.0");
 
     Param("AimCrouchBackwardMaxSpeed", "1.5");
     Param("AimCrouchBackwardMinSpeed", "0.5");
@@ -2035,7 +2038,7 @@ sub main()
     Param("GlideDownRequireSurfaceType", "false");
     Param("GlideDownKeepSpeedAfterAttach", "true");
 
-    Param("ManualSprintTime", "30.0");
+    Param("ManualSprintTime", "37.5");
     Param("ManualSprintRegenerationTime", "1.0");
     Param("ManualSprintRegenerationDelay", "0.75");
     Param("ManualSprintTimeScaledByMaxStamina", "false");
@@ -2062,13 +2065,22 @@ sub main()
     Param("AntiWallHandsScale", "0.34");
     Param("AntiWallAimHandsScale", "0.5");
 
-    Param("ThrownMeleeWeaponPirceChance", "0.1");
+    Param("ThrownMeleeWeaponPierceChance", "0.25");
     Param("ThrownMeleeWeaponPhysicsForceMul", "1.8");
     Param("ThrownMeleeWeaponMaxPhysicsForce", "130");
     Param("ThrownMeleeWeaponRagdollProb", "0.5");
-
+    Param("WeaponDamageWeaponThrowMul", "0");
 	
 	Param("EnableFullBodyBalanceAnimationsWhenStanding", "true");
 
     Param("CameraSmoothingRotationInfluence", "1.0");
+
+    Param("ConstantExtraGravity", "0.0");
+
+    Param("EvolvingItemCombatXpToItemXpMultiplier", "1.0");
+
+    Param("BackstabDamage", "0.0");
+    Param("BackstabDamageAngle", "60.0");
+
+    Param("SprintHeadCorrectionFactor", "0.55");
 }
