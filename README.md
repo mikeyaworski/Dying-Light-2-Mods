@@ -1,5 +1,9 @@
 # Dying Light 2 Mods
 
+## Corrupted Saves Warning
+
+**Important**: Read the [wiki page](https://github.com/mikeyaworski/Dying-Light-2-Mods/wiki/Corrupted-Saves) on the possibility of corrupted saves due to mod usage, and then consider how you want to use the mod or whether you want to use it at all.
+
 ## Installation
 
 1. Put the `dataX.pak` file into your `Steam\steamapps\common\Dying Light 2\ph\source` folder. Increment the number if there are conflicting data files. data2, data3, ..., data7
