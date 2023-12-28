@@ -1,5 +1,10 @@
 sub main()
 {
+	Param("AnimGraph_BankName", "player");
+	Param("AnimGraph_GraphName", "player_main");
+	Param("AnimGraph_PresetName", "");
+	Param("AnimGraph_BindNamespace", "Human");
+
 	Param("ManualSloMoEnabled", "false");
 	Param("ManualSloMoCooldown", "5.0");  
 	
@@ -70,6 +75,8 @@ sub main()
 	Param("FirearmsCrossbowAccuracyFactor", "0.1");
 	// how much the bow is swaying when shotinglower value - lower sway
     Param("BowAccuracyFactor", "0.1");
+
+    Param("FirearmsHarpoonAccuracyFactor", "0.1");
 	
     Param("MinTimeToGiveCollisionDamage", "0.27");
     Param("CanMeleeInAir", "1");
@@ -361,6 +368,9 @@ sub main()
 	Param("StaminaRegenerationFactorStand", "0.25");               // factor when standing still
 	Param("StaminaRegenerationFactorStandDalay", "1.0");               // factor when standing still
 	
+    Param("HealthRegenerationOnHit", "0.0");
+    Param("HealthRegenerationFactorOnHit", "0.0");
+
     Param("StaminaCanFullyDrain", "1");                      // Does the player stamina perform the fully drained logic
     Param("StaminaWarningLevel", "0.51");                       // Hud will warn user they are low stamina at this level
     Param("ParryDamageMult", "Player_ParryDamageMult");
@@ -407,6 +417,8 @@ sub main()
     Param("XRayVisEffectDuration", "1.5");
     Param("XRayEffectDuration", "0.3");  
     Param("EnableXray", "1");
+    Param("EnableXRayEffectOnAllHits", "false");
+    Param("DisableXRaySlowMoLimit", "false");
     Param("SlowMoProbability", "1.0");
 	Param("SlowMoLastGroupTime", "30.0");
 	Param("GroupOfEnemiesCount", "3.0");	
@@ -420,11 +432,11 @@ sub main()
 	Param("ZipLineAboveSlideEnabled", "1");
     Param("StrengthDamageMul", "Player_StrengthDamageMul");
     Param("MeleeDamageMul", "Player_MeleeDamageMul");
-    Param("MeleeDamageFullStaminaMul", "Player_MeleeDamageFullStaminaMul");
-    Param("MeleeDamageLowStaminaMul", "Player_MeleeDamageLowStaminaMul");
+    Param("MeleeDamageFullStaminaMul", "0");
+    Param("MeleeDamageLowStaminaMul", "0");
     Param("MeleeDamageFastHitMul", "Player_MeleeDamageFastHitMul");
-    Param("MeleeDamageFullHealthMul", "Player_MeleeDamageFullHealthMul");
-    Param("MeleeDamageLowHealthMul", "Player_MeleeDamageLowHealthMul");
+    Param("MeleeDamageFullHealthMul", "0");
+    Param("MeleeDamageLowHealthMul", "0");
     Param("MeleeLowStaminaForceAndPhxMul", "1.0");
 	
 	Param("ObstaclePassMinTimeBetween", "0.5");	
@@ -544,7 +556,7 @@ sub main()
 	Param("HealthCriticalPPMaxLevel", "1.0");
 	Param("HealthCriticalPPMinLevel", "2.0");
 	Param("HealthCriticalPPInTime", "0.1");
-	Param("HealthCriticalPPOutTime", "1.0");
+	Param("HealthCriticalPPOutTime", "3.0");
 	Param("HealthCriticalAnimationSpeed", "3.0");
 	Param("HealthCriticalLevel", "0.333");
 	Param("MaxAutoRegenHealthPercent", "33");
@@ -785,6 +797,11 @@ sub main()
     Param("AimStrafeMinSpeed", "0.5");
     Param("AimAcceleration", "7.0");
     Param("AimDeceleration", "10.0");
+
+    // Halberd
+    Param("ChargeStaminaHalberdCostMul", "2.0");
+    Param("ChargeHalberdPhysicsDamageMul", "2.0");
+    Param("AdditionalMeleeAimTargetFinderRangeHalberd", "-10.0");
 
     // Knife
     Param("ChargeStaminaKnifeCostMul", "2.0");
@@ -1028,7 +1045,7 @@ sub main()
 	Param("FinisherEnabled", "1");                       //  enables finishers 
     
     // FINISHER KNOCKDOWN
-    Param("FinisherKnockdownEnemyMaxHealth", "0.0"); // if value <= 0 then it is always available
+    Param("FinisherKnockdownEnemyMaxHealth", "1.0"); // if value <= 0 then it is always available
     
     // SILENT KILL (Finisher back)
     Param("FinisherBackEnabled", "1");                       //  enables backstab
@@ -1275,7 +1292,8 @@ sub main()
     Param("MaxCarUpgradeQuality", "-1.0");
     Param("CarLuckyRepairChance", "0.0");
     Param("PoisonedEffectDuration", "1.0");
-    Param("ScreamEffectDuration", "1.5");
+    Param("ScreamEffectDuration", "2.0");
+    Param("ScreamEffectIntensity", "0.8");
     Param("JumpSoundProb", "0.5");
     Param("AntizinChangePerSecond", "0.0");
     Param("AntizinPercentageChangePerSecond", "0.0");	
@@ -1386,7 +1404,8 @@ sub main()
     Param("MeeleCutStaminaUsageMul", "0.0");
     Param("MeeleOneHandedStaminaUsageMul", "0.0");
     Param("MeeleTwoHandedStaminaUsageMul", "0.0");
-	Param("MeeleTwoHandedMinLookAngle", "-65.0");
+	Param("MeeleTwoHandedMinLookAngle", "-60.0");
+    Param("HalberdMinLookAngle", "-60.0");
     Param("MeeleFistStaminaUsageMul", "0.0");
     Param("StaminaRegenerationOnHalfHealth", "0.0");
     Param("StaminaUsageFactorOnMaxHealth", "1.0");
@@ -1443,6 +1462,7 @@ sub main()
     Param("ChargeSpinFullBodyCutProbability", "0.6");
 	
 	Param("GrenadeBlastIndicatorRange", "15.0");
+	Param("ThrowableExplosiveBlastIndicatorRenge", "15.0");
 	
 	Param("SpecialMoveDropKickAbusePenaltyCount", "1.0"); // max time the AI will avoid the move
 	Param("SpecialMoveAbusePenaltyCount", "2.0"); // max time the AI will avoid the move
@@ -1580,6 +1600,8 @@ sub main()
 	Param("HumanTakeDownInitialStaminaCost" , "0.2"); 
 	Param("HumanTakeDownLoopTime" , "3.0");
     Param("FinisherStaggeredEnemyHealthFacor" , "0.35");
+    Param("FinisherStaggerUnarmedProbability", "0.25");
+    Param("FinisherStaggerUnarmedProbabilitySampleCount", "4.0");
 	Param("MinGlideHeightToAwardExperience", "6.0");
 	Param("StandInWaterDepth", "1.0");
 	
@@ -1621,7 +1643,7 @@ sub main()
     Param("SoundParamRuntimeScaledValueGrowTimeSec", "10");
     Param("SoundStatePlayerMovementLandingStateDurationSec", "0.2");
 	
-	Param("MaxPossibleAntizin", "2.5");
+	Param("MaxPossibleAntizin", "3.14");
 	Param("AntizinLowWarningLevel", "0.4");
 	Param("AntizinCriticalWarningLevel", "0.2");
     Param("AntizinCriticalInfectionEffectMultiplier", "0.4");
@@ -1722,7 +1744,7 @@ sub main()
 	Param("AdditionalMeleeAimTargetFinderRange", "1.0");
 	Param("AdditionalMeleeAimTargetFinderRangeFist", "2.0");
 	
-	Param("EnemySnapMaxSpeed", "10.0");
+	Param("EnemySnapMaxSpeed", "5.0");
 	Param("ForceGivingHeavyDamage", "false");
 	Param("EnableTackleOnBlock", "false");
 	Param("ReduceReactionsSeverity", "false");
@@ -1850,6 +1872,7 @@ sub main()
     Param("ItemStaminaDamageMul", "1.0");
 
     Param("ChargeAttackAdditionalMul", "0.0");
+    Param("ChargeAttackAdditionalMulNight", "0.0");
 
     Param("PerfectBlockHealingFactor", "0.0");
 	
@@ -1929,11 +1952,12 @@ sub main()
     Param("SweatGetingSweatDuration", "10.0");
 	
 	Param("MeleeProgressiveHitCooldownTimer", "4.0");
-	Param("EpicMomentProbability", "0.05");	
+	Param("EpicMomentProbability", "0.01");	
 
     Param("MapPlayableAreaTeleportTime", "5.0");
     Param("SoftPlayableAreaFailTime", "5.0");
-
+    Param("SoftPlayableAreaFailTimeInOnlineMission", "10.0");
+    
     Param("GrabTackleSearchRadius", "6.0");
 
     Param("ToxinsImmunity", "false");
@@ -2070,6 +2094,9 @@ sub main()
     Param("ThrownMeleeWeaponMaxPhysicsForce", "130");
     Param("ThrownMeleeWeaponRagdollProb", "0.5");
     Param("WeaponDamageWeaponThrowMul", "0");
+    Param("ThrownMeleeWeaponDurabilityLoss", "1");
+
+    Param("ThrowMeleeWeaponMinHoldTime", "0.3");
 	
 	Param("EnableFullBodyBalanceAnimationsWhenStanding", "true");
 
@@ -2083,4 +2110,76 @@ sub main()
     Param("BackstabDamageAngle", "60.0");
 
     Param("SprintHeadCorrectionFactor", "0.55");
+
+    Param("MeleeAttackFX", "");
+
+    Param("ForceChemicalEffect", "false");
+
+    Param("AdditionalCameraRoll", "0.0");
+
+    Param("CamouflageInfectedConflictSides", "zombie");
+    Param("CamouflageHumanConflictSides", "pk;scav;bandit;bandit_2;survivor;survivor_ms_panic;survivor_encounter;pk_hostile;pk_encounter;renegade");
+
+    Param("DisplaySelectedItemOutfitVisOnlyWithNoOtherCurrentItem", "false");
+    Param("UseQuickslotForItemOutfitVis", "true");
+    
+    Param("WeaponDamageHeadMul", "0.0"); //keep at 0 in order to work properly, is defined in curve_di.xml
+    Param("WeaponDamageHeadMulNight", "0.0"); //keep at 0 in order to work properly, is defined in curve_di.xml
+    Param("WeaponCriticalHitChance", "0.0"); //keep at 0 in order to work properly, is defined in curve_di.xml
+    Param("WeaponCriticalHitChanceNight", "0.0"); //keep at 0 in order to work properly, is defined in curve_di.xml
+    Param("WeaponCriticalHitPowerAttackChance", "0.0"); //keep at 0 in order to work properly, is defined in curve_di.xml
+    Param("WeaponCriticalHitPowerAttackChanceNight", "0.0"); //keep at 0 in order to work properly, is defined in curve_di.xml
+
+    Param("WeaponAffixStunChance", "0.0"); //keep at 0 in order to work properly, is defined in curve_di.xml
+    Param("WeaponAffixStunChanceNight", "0.0"); //keep at 0 in order to work properly, is defined in curve_di.xml
+    Param("WeaponAffixStunDuration", "3.0");
+
+    Param("AutoStaminaDamageTierMul", "1.0");
+
+    Param("WrestleKickMinSpeedToMove", "0.25");
+
+    Param("WeaponAntizineDrainMul", "1.0");  //Affix variable
+    Param("ZombieNightDamageMulFactor", "0.0");  //Affix variable
+    Param("WeaponExperienceMulInfectedNight", "1.0");  //Affix variable
+    Param("WeaponHealAtInfectedSlainNight", "0.0");  //Affix variable
+
+    Param("InitialShotMorphTime", "0.0");
+    Param("SingleShotMorphTime", "0.0");
+    Param("SeriesShotMorphTime", "0.0");
+    Param("WeaponSingleShotMorphTime", "0.0");
+    Param("WeaponSeriesShotMorphTime", "0.0");
+
+    Param("AddCameraShakeOnShoot", "true");
+    Param("CameraShotShakePower", "0.25");
+
+    Param("DamageTagsVolatiles", "volatile;volatile_hive;volatile_tyrant");
+    Param("DamageTagsDemolishers", "demolisher;demolisher_sgt;goon");
+    Param("DamageTagsCorruptors", "corruptor");
+    Param("DamageTagsVirals", "viral");
+    Param("DamageTagsBanshees", "banshee;banshee_hag");
+
+    Param("WeaponDamageVsVolatiles", "0"); //Affix variable
+    Param("WeaponDamageVsDemolishers", "0"); //Affix variable
+    Param("WeaponDamageVsCorruptors", "0"); //Affix variable
+    Param("WeaponDamageVsVirals", "0"); //Affix variable
+    Param("WeaponDamageVsBanshees", "0"); //Affix variable
+
+    Param("WeaponAntizineDrainOnPlayerHit", "0"); //Affix variable
+    Param("WeaponAntizineDrainOnDamageReviced", "0"); //Affix variable
+
+    Param("KorekCharmCrfEffDurabilityThreshold", "0.25");
+
+    Param("PerfectBlockAdditionalStaminaDamage", "10000");
+    Param("PerfectBlockAdditionalStaminaDamageChance", "0.33");
+    Param("PerfectBlockAdditionalStaminaDamageMaxEnemyHealthFactor", "0.3");
+
+    Param("PerfectDodgeAdditionalStaminaDamage", "10000");
+    Param("PerfectDodgeAdditionalStaminaDamageChance", "0.33");
+    Param("PerfectDodgeAdditionalStaminaDamageMaxEnemyHealthFactor", "0.5");
+
+    Param("XRayAdditionalStaminaDamage", "10000");
+    Param("XRayAdditionalStaminaDamageChance", "1.0");
+    Param("XRayAdditionalStaminaDamageMaxEnemyHealthFactor", "0.5");
+    
+    Param("ReturningWeaponGripAudioEventDistance", "8");
 }
