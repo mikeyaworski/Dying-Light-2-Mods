@@ -2094,7 +2094,7 @@ sub main()
     Param("ThrownMeleeWeaponMaxPhysicsForce", "130");
     Param("ThrownMeleeWeaponRagdollProb", "0.5");
     Param("WeaponDamageWeaponThrowMul", "0");
-    Param("ThrownMeleeWeaponDurabilityLoss", "1");
+    Param("ThrownMeleeWeaponDurabilityLoss", "0");
 
     Param("ThrowMeleeWeaponMinHoldTime", "0.3");
 	
