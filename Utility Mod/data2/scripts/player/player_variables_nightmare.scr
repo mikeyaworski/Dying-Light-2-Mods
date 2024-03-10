@@ -7,15 +7,19 @@ sub PlayerVariables()
     Param("PlayerDamageVulnerability", "Player_DamageVulnerability_Hard");
     Param("PlayerFallDamageVulnerability", "Player_FallDamageVulnerability_Hard");
 
-    Param("WeaponStaminaUsageMul", "1.25");
-    Param("StaminaRegenerationMul", "0.75");
+    Param("WeaponStaminaUsageMul", "1.75");
+    Param("StaminaRegenerationMul", "0.5");
 
     Param("PerfectBlockTimingEnd", "0.15");
 
     Param("MeleeWpnDurabilityMulReduce", "0");
 
     Param("HealthRegenerationMaxLevel", "HealthRegenerationMaxLevel_Hard");
-    Param("HealthRegenerationMul", "DefaultRegenHardMul");
+   //Param("HealthRegenerationMul", "DefaultRegenHardMul");
+	Param("HealthCriticalLevel", "0.25");
+	Param("MaxAutoRegenHealthPercent", "25");
+	Param("LowHealthEffectThreshold", "0.95");                // Defines the value of health when critical health post process is working, based on HealthCriticalLevel
+    Param("HealthRegenerationDelay", "10.0");
 
     Param("HealthRegenerationEnabled", "false");
 
@@ -27,6 +31,19 @@ sub PlayerVariables()
 	
 	Param("DifficultySyncActionDamageMul", "1.5");
     Param("DifficultyItemDamageMul", "1.5");	
-	Param("DifficultyRangedHeadDamageMul", "1.5");
+	Param("DifficultyRangedHeadDamageMul", "1.25");
+	Param("SpecialMoveAbusePenaltyCount", "1.0"); // max time the AI will avoid the move
+	Param("DropAttackMaxFallHeight", "15.0"); // block using jump attack after faling from 15 meters
 	Param("MaxDodgesInSequence", "2");
+
+    Param("OutfitArmorFactorWhenDamageResistanceActive", "0.85");
+    Param("UvLightImmunitiyRegenerationFactor", "0.1");
+    Param("UvFlashlightEnergyDrainFactor", "1.5");
+
+    Param("FlashlightDimmingTime", "50.0");
+	Param("FlashlightAutomaticTurnOffTime", "50.0");
+	Param("FlashlightFlickeringStartTimeFactor", "0.2");
+	Param("FlashlightFlickeringBeginProbability", "0.3");
+	Param("FlashlightFlickeringEndProbability", "0.75");
+	Param("FlashlightFlickeringProbabilityInCombatFactor", "0.33");
 }
