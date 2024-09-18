@@ -7,8 +7,8 @@ sub PlayerVariables()
     Param("PlayerDamageVulnerability", "Player_DamageVulnerability_Hard");
     Param("PlayerFallDamageVulnerability", "Player_FallDamageVulnerability_Hard");
 
-    Param("WeaponStaminaUsageMul", "1.75");
-    Param("StaminaRegenerationMul", "0.5");
+    Param("WeaponStaminaUsageMul", "1.65");
+    Param("StaminaRegenerationMul", "0.575"); //Previous stamina set-up before rework
 
     Param("PerfectBlockTimingEnd", "0.15");
 
@@ -24,6 +24,7 @@ sub PlayerVariables()
     Param("HealthRegenerationEnabled", "false");
 
     Param("InjectorDescSuffix", "_Nightrunner");
+    Param("ThrowableDescSuffix", "_Nightrunner");
 	Param("ActiveLandingMaxInputTime", "0.2");
     Param("ActiveLandingMinInputTime", "0.5");
 	
@@ -36,14 +37,41 @@ sub PlayerVariables()
 	Param("DropAttackMaxFallHeight", "15.0"); // block using jump attack after faling from 15 meters
 	Param("MaxDodgesInSequence", "2");
 
-    Param("OutfitArmorFactorWhenDamageResistanceActive", "0.85");
-    Param("UvLightImmunitiyRegenerationFactor", "0.1");
+    //Param("OutfitArmorFactorWhenDamageResistanceActive", "0.85");
+    Param("OutfitArmorResistanceFactorMul", "0.85");
+    Param("UvLightImmunitiyRegenerationFactor", "0.25");
     Param("UvFlashlightEnergyDrainFactor", "1.5");
 
-    Param("FlashlightDimmingTime", "50.0");
-	Param("FlashlightAutomaticTurnOffTime", "50.0");
-	Param("FlashlightFlickeringStartTimeFactor", "0.2");
-	Param("FlashlightFlickeringBeginProbability", "0.3");
-	Param("FlashlightFlickeringEndProbability", "0.75");
-	Param("FlashlightFlickeringProbabilityInCombatFactor", "0.33");
+    Param("FlashlightDimmingTime", "180.0");
+	Param("FlashlightAutomaticTurnOffTime", "180.0");
+	Param("FlashlightFlickeringStartTimeFactor", "0.5");
+	Param("FlashlightFlickeringBeginProbability", "0.2");
+	Param("FlashlightFlickeringEndProbability", "0.1");
+	Param("FlashlightFlickeringProbabilityInCombatFactor", "0.05");
+    Param("FlashlightMinTimeBetweenFlickering", "4.0");
+    Param("FlashlightMaxTimeBetweenFlickering", "20.0");
+    Param("FlashlightTimeBetweenFlickeringEnergyFactor", "0.35");
+    
+    Param("ExhaustedEyesClosureEffectStrength", "0.85"); //defines out of stamina visual effect
+    Param("ExhaustedEyesClosureEffectStartFactor", "0.35"); //defines out of stamina timining trigger
+    
+    
+    Param("ArmorResistanceMulBlast", "1.5");
+    Param("ArmorResistanceMulElectricity", "0.35");
+    Param("ArmorResistanceMulPoison", "0.35");
+    Param("ArmorResistanceMulChemical", "0.35");
+    
+    Param("GlideStaminaCostAtNight", "0.725"); 
+    
+    // detection ranges for AIs:
+	Param("SurvivorSenseAIRange", "0.0"); // range of detecting active AI
+    Param("SurvivorSenseRestingAIRange", "0.0"); // range of detecting sleeping AI
+	
+    
+    Param("AdvancedStamina", "true");
+    Param("StaminaRegenerationMul", "1.0");
+    
+    Param("PushAttackAdvancedStaminaCost", "0.5");
+    Param("AdvancedStaminaRegenerationRelative", "0.75");
+    Param("AdvancedStaminaRegenerationRelativeOutsideDanger", "0.75");
 }
