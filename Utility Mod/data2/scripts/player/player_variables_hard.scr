@@ -12,7 +12,7 @@ sub PlayerVariables()
 
     Param("PerfectBlockTimingEnd", "0.15");
 
-    Param("HealthRegenerationMaxLevel", "HealthRegenerationMaxLevel_Hard");
+    //Param("HealthRegenerationMaxLevel", "HealthRegenerationMaxLevel_Hard");
     //Param("HealthRegenerationMul", "DefaultRegenHardMul");
 	Param("HealthCriticalLevel", "0.25");
 	Param("MaxAutoRegenHealthPercent", "25");
